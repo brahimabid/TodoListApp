@@ -1,0 +1,82 @@
+<div class="row">
+  <div class="col col-md-6 offset-3" *ngIf="createAccount==false">
+    <mdb-card>
+
+      <mdb-card-header class="info-color white-text text-center py-4">
+        <h5>
+          <strong>Login</strong>
+        </h5>
+      </mdb-card-header>
+
+      <mdb-card-body class="px-lg-5 pt-0">
+
+        <form [formGroup]="formLogin" class="text-center" style="color: #757575;">
+          <br>
+          <mat-form-field class="input-full-width">
+            <input matInput formControlName="mail" placeholder="Email *">
+          </mat-form-field>
+
+          <br>
+          <mat-form-field class="input-full-width">
+            <input matInput formControlName="password" placeholder="password *">
+          </mat-form-field>
+          <br>
+
+
+        </form>
+        <br>
+
+        <a (click)="gocreate()">
+          <u>create account</u>
+        </a>
+      </mdb-card-body>
+      <h5 style="color:red">{{message}}</h5> 
+      <br>
+      <button mdbBtn color="info" outline="true" rounded="true" block="true" mdbWavesEffect type="submit" (click)="conctUser()">Connexion</button>
+
+
+    </mdb-card>
+
+  </div>
+
+  <div class="col col-md-6 offset-3" *ngIf="createAccount==true">
+    <mdb-card>
+
+      <mdb-card-header class="info-color white-text text-center py-4">
+        <h5>
+          <strong>Login</strong>
+        </h5>
+      </mdb-card-header>
+
+      <mdb-card-body class="px-lg-5 pt-0">
+
+        <form [formGroup]="formRegister" class="text-center" style="color: #757575;">
+          <br>
+          <mat-form-field class="input-full-width">
+            <input matInput formControlName="name" placeholder="name *">
+          </mat-form-field>
+
+          <br>
+          <mat-form-field class="input-full-width">
+            <input matInput formControlName="mail" placeholder="Email *">
+          </mat-form-field>
+          <br>
+          <mat-form-field class="input-full-width">
+            <input matInput formControlName="password" placeholder="password *">
+          </mat-form-field>
+          <br>
+          <input type="file" formControlName="img" (change)="selectedM($event)" name="myFile" />
+          <br>
+
+        </form>
+        <br>
+
+      </mdb-card-body>
+        <h5 style="color:red">{{message}}</h5> 
+      <button mdbBtn color="info" outline="true" rounded="true" block="true" mdbWavesEffect type="submit" (click)="saveNewUser()">save </button>
+
+
+    </mdb-card>
+
+  </div>
+</div>

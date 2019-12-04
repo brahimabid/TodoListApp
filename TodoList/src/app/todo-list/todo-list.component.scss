@@ -1,0 +1,112 @@
+
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700');
+
+h1{
+    color:orangered!important;
+
+}
+.example-full-width{
+    width:500px !important;
+}
+.row{
+    background-color: rgb(250, 248, 248);
+}
+
+/** ======================  base css ==============================**/
+
+a:hover{ text-decoration: none;
+      color:black!important }
+a:visited{
+    background-color:orangered!important;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 20px;
+  }
+/***    left menu ****/
+
+/***********************  TOP Bar ********************/
+.sidebar{ width:220px;  background-color:rgba(7, 76, 141, 0.897);transition: all 0.5s  ease-in-out;height: 800px;}
+.bg-defoult{background-color:rgba(40, 88, 218, 0.897);height: 800px; }
+.sidebar ul{ list-style:none; margin:0px; padding:0px; }
+.sidebar a,.sidebar li a.collapsed.active{ display:block; padding:8px 12px; color:rgb(29, 28, 28);border-left:0px solid #f02a07;  text-decoration:none}
+.sidebar  {border-left:5px solid #161616; transition: all 0.5s  ease-in-out}
+
+.sidebar li a i{ padding-right:5px;}
+.sidebar ul li .sub-menu li a{ position:relative}
+.sidebar ul li .sub-menu li a:before{
+    font-family: FontAwesome;
+    content: "\f105";
+    display: inline-block;
+    padding-left: 0px;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+.sidebar ul li .sub-menu li a:hover:after {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 0;
+    width: 5px;
+    background-color: rgb(192, 53, 11);
+    height: 100%;
+}
+.sidebar ul li .sub-menu li a:hover{ background-color:#222; padding-left:20px; transition: all 0.5s  ease-in-out}
+.sub-menu{ border-left:5px solid #e71405;}
+	.sidebar li a .nav-label,.sidebar li a .nav-label+span{ transition: all 0.5s  ease-in-out}
+	
+
+	.sidebar.fliph li a .nav-label,.sidebar.fliph li a .nav-label+span{ display:none;transition: all 0.5s  ease-in-out}
+	.sidebar.fliph {
+    width: 42px;transition: all 0.5s  ease-in-out;
+   
+}
+
+.sidebar.fliph li{ position:relative}
+.sidebar.fliph .sub-menu {
+    position: absolute;
+    left: 39px;
+    top: 0;
+    background-color: #222;
+    width: 150px;
+    z-index: 100;
+}
+	
+
+	.user-panel {
+    clear: left;
+    display: block;
+    float: left;
+}
+.user-panel>.image>img {
+    width: 100%;
+    max-width: 84px;
+    height: auto;
+}
+.user-panel>.info,  .user-panel>.info>a {
+    color: rgb(26, 25, 25);
+}
+.user-panel>.info>p {
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+.user-panel {
+    clear: left;
+    display: block;
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 25px 15px;
+    border-bottom: 1px solid;
+}
+.user-panel>.info {
+    padding: 5px 5px 5px 15px;
+    line-height: 1;
+    
+}
+
+.fliph .user-panel{ display: none; }
+
+
+ 

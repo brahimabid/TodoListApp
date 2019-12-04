@@ -1,0 +1,106 @@
+<div class="row">
+    <div class="col col-md-2">
+        <div class="main">
+            <aside>
+                <div class="sidebar left ">
+                    <div class="user-panel">
+                        <div class="pull-left image">
+                            <img [src]="decoded.img[0]" class="rounded-circle" alt="User Image">
+                            <br>
+                        </div>
+                        <div class="pull-left info">
+                            <p>{{decoded.name}}</p>
+                            <a href="#">
+                                <i class="fa fa-circle text-success"></i> Online</a>
+                            <br>
+                           <br>
+                           
+                                
+                        </div>
+                    </div>
+                    <ul class="list-sidebar bg-defoult">
+                      <li> <a (click)="quitterTodo()"> <u>LogOut</u></a></li>
+
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+
+
+    </div>
+    <div class="col col-md-8">
+        <div class="row">
+            <div class="col-md-5 offset-1">
+                <form [formGroup]="formNote" *ngIf="selectNew==true">
+                    <h2>Ajouter Une Note :</h2>
+                    <br>
+                    <mat-form-field class="example-full-width">
+                        <input matInput formControlName="title" placeholder="Tile *">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field class="example-full-width">
+                        <textarea matInput formControlName="body" placeholder="Body *"></textarea>
+                    </mat-form-field>
+                    <br>
+
+                    <mat-form-field class="example-full-width">
+                        <input matInput formControlName="color" placeholder="color *">
+                    </mat-form-field>
+                    <br>
+                    <h4>favorite :</h4>
+                    <br>
+                    <mat-radio-group formControlName="favorite">
+                        <mat-radio-button value="true">True</mat-radio-button>
+                        <mat-radio-button value="false">false </mat-radio-button>
+                    </mat-radio-group>
+                    <br>
+                    <br>
+                    <button mat-button color="primary" (click)="ajouterNote()">Ajouter</button>
+                </form>
+                <form [formGroup]="formEditNote" *ngIf="selectEdit==true">
+                    <h2>Modifier Mon Note :</h2>
+                    <br>
+                    <mat-form-field class="example-full-width">
+                        <input matInput formControlName="title" placeholder="Tile *">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field class="example-full-width">
+                        <textarea matInput formControlName="body" placeholder="Body *"></textarea>
+                    </mat-form-field>
+                    <br>
+
+                    <mat-form-field class="example-full-width">
+                        <input matInput formControlName="color" placeholder="color *">
+                    </mat-form-field>
+                    <br>
+                    <h4>favorite :</h4>
+                    <br>
+                    <mat-radio-group formControlName="favorite">
+                        <mat-radio-button value="true">True</mat-radio-button>
+                        <mat-radio-button value="false">false </mat-radio-button>
+                    </mat-radio-group>
+                    <br>
+                    <br>
+                    <button mat-button color="primary" (click)="saveNote()">Save</button>
+                </form>
+            </div>
+            <div class="col-md-5 offset-1">
+                <div>
+                    <h2>Mon Liste des Notes :</h2>
+                    <br>
+                    <mat-toolbar color="primary">
+                        <mat-toolbar-row *ngFor="let note of notes">
+                            <span>
+                                <a (click)="editNote(note)">{{ note.title }}</a>
+                            </span>
+                        </mat-toolbar-row>
+
+
+                    </mat-toolbar>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
